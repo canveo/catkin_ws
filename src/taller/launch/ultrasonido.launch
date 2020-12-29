@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="taller" type="ultrasonido.py" name="ultrasonido1" output="screen"  />
+	<node pkg="taller" type="ultrasonido.py" name="ultrasonido2" output="screen" />
+</launch>

@@ -1,0 +1,15 @@
+<package>
+  <description brief="taller">
+
+     taller
+
+  </description>
+  <author>canveo</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/taller</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+</package>

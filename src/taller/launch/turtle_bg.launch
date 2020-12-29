@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="taller" type="espiral.py" name="espiral" output="screen"/>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+</launch>

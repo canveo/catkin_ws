@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/canveo/catkin_ws/install/setup.sh
