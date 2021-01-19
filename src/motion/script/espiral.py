@@ -37,7 +37,7 @@ class Espiral:
         self.cmd_vel.linear.x = 0.5
         self.cmd_vel.angular.z = 4.0
         while not rospy.is_shutdown():
-            if (self.posx < 6.5) or (self.posy < 6.5):
+            if (self.posx < 10.2) or (self.posy < 10.2):
                 self.cmd_vel.linear.x += 0.5
                 self.pub.publish(self.cmd_vel)
                 self.rate.sleep()
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     except rospy.ROSInterruptException:
         print('Error')
 
-
+## prueba esto es el cuarto cambio##
 
         
 

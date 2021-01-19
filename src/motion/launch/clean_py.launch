@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="clean_py" pkg="motion" type="espiral.py" output="screen"/>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+</launch>
