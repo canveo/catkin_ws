@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="vision" type="image_sub.py" name="image_sub" output="screen"/>
+    <node pkg="vision" type="image_pub.py" name="image_pub" output="screen"/>
+</launch>
