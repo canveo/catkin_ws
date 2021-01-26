@@ -67,31 +67,9 @@ def get_contour_center(contour):
     return cx, cy
 
 
-cap = cv2.VideoCapture('/home/canveo/catkin_ws/src/vision/script/video/tennis-ball-video.mp4')
-
-# Check if camera opened successfully
-if (cap.isOpened()== False): 
-  print("Error opening video stream or file")
-
-# Read until video is completed
-while(cap.isOpened()):
-  # Capture frame-by-frame
-  ret, frame = cap.read()
-  if ret == True:    
-    
+def ball_detected(frame):
     mask = filter_color(frame)
     contours = getContours(mask)
     draw_ball_contour(mask, frame, contours)
     cv2.imshow('Mask', mask)
-
-    # Press Q on keyboard to  exit
-    if cv2.waitKey(25) & 0xFF == ord('q'):
-      break
-  else: 
-    break
-
-# When everything done, release the video capture object
-cap.release()
-
-# Closes all the frames
-cv2.destroyAllWindows()
+    return 0
