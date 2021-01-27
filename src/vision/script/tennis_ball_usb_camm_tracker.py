@@ -1,14 +1,10 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python
 
 import rospy
 import cv2
-import numpy as np
-from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 import sys
-
-
 
 
 def filter_color(frame):
@@ -83,8 +79,8 @@ def ball_detected(frame):
     
 
 def main(args):
-    i_sub = image_subscriber()
-    rospy.init_node("Image_Subscriber", anonymous=True)
+    u_sub = usbcam_tracker()
+    rospy.init_node("/usb_cam/image_raw", anonymous=True)
     try:
         rospy.spin()
     except KeyboardInterrupt:
@@ -92,10 +88,9 @@ def main(args):
     cv2.destroyAllWindows()
 
 
-class image_subscriber:
+class usbcam_tracker:
     def __init__(self):
-        self.image_sub = rospy.Subscriber("image_topic", Image, self.callback)
-        self.bridge = CvBridge()
+        self.video_sub = rospy.Subscriber("video_topic", Image, self.callback)
 
     def callback(self, data):
         try:
